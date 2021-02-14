@@ -1,0 +1,34 @@
+<LoginScreen>
+    MDCard:
+        orientation: "vertical"
+        size_hint: None, None
+        size: root.width-root.width/10,root.height-root.height/10
+        pos_hint: {"center_x": .5, "center_y": .5}
+        MDIcon:
+            icon: root.main_icon		
+            font_size : 48
+            halign:"center"
+            pos_hint: {"center_x": .5, "center_y": .5}
+        
+        MDLabel:
+            pos_hint: {"center_x": .5, "center_y": .5}
+            halign:"center"
+            text:"Login Form"
+        BoxLayout:
+            orientation:"horizontal"
+            spacing :"10dp"
+            pos : self.pos
+            size :self.size
+            pos_hint: {"center_x": .5, "center_y": .5}
+            BoxLayout:
+                orientation:"horizontal"
+            MDRaisedButton:
+                text:"Klik"
+                pos_hint: {"center_x": .5, "center_y": .5}
+                on_release:root.login("abcd")
+            MDRaisedButton:
+                text:"Klik 2"
+                pos_hint: {"center_x": .5, "center_y": .5}
+                on_release:root.registration("abcd")
+            BoxLayout:
+                orientation:"horizontal"
