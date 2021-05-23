@@ -36,7 +36,9 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy==master,https://github.com/kivymd/KivyMD/archive/master.zip,pygments,sdl2_ttf==2.0.15,Pillow
+#requirements = python3,kivy==master,https://github.com/kivymd/KivyMD/archive/master.zip,pygments,sdl2_ttf==2.0.15,Pillow
+#requirements = python3==3.8.1,hostpython3==3.8.1,kivy,kivymd,pygments,sdl2_ttf==2.0.15,Pillow
+requirements = python3==3.9.1,hostpython3==3.9.1,kivy,kivymd,pygments,sdl2_ttf==2.0.15,Pillow
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -85,7 +87,7 @@ fullscreen = 0
 #android.presplash_color = #FFFFFF
 
 # (list) Permissions
-#android.permissions = INTERNET
+sandroid.permissions = INTERNET
 
 # (int) Target Android API, should be as high as possible.
 android.api = 28
@@ -94,7 +96,7 @@ android.api = 28
 android.minapi = 21
 
 # (int) Android SDK version to use
-#android.sdk = 20
+#android.sdk = 21
 
 # (str) Android NDK version to use
 android.ndk = 19c
@@ -233,7 +235,7 @@ android.arch = armeabi-v7a
 #p4a.fork = kivy
 
 # (str) python-for-android branch to use, defaults to master
-#p4a.branch = master
+p4a.branch = develop
 
 # (str) python-for-android git clone directory (if empty, it will be automatically cloned from github)
 #p4a.source_dir =

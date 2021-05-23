@@ -1,10 +1,10 @@
 from kivy.core.window import Window
 from kivymd.app import MDApp
 from kivy.app import App
-from manager_screen import ManagerScreen
-from login_screen import LoginScreen
-from main_screen import MainScreen
-from registration import Registration
+from py.manager_screen import ManagerScreen
+from py.login_screen import LoginScreen
+from py.main_screen import MainScreen
+from py.registration import Registration
 from kivy.lang import Builder
 from kivy.properties import StringProperty
 
@@ -58,11 +58,11 @@ from kivy.properties import StringProperty
 # RAISE_ERROR = True
 
 class MyApp(MDApp):
+    kv_directory = "kv"
 
     def build(self):
-        kv_directory = "kv"
         self.title = "Login Screen"
-        Builder.load_file("manager_screen.kv")
+        Builder.load_file("kv/manager_screen.kv")
 
         return ManagerScreen()
 

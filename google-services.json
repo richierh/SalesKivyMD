@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1054061919729",
+    "project_id": "kivyloginsystem-1613374129911",
+    "storage_bucket": "kivyloginsystem-1613374129911.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054061919729:android:83ce16798871197a88d850",
+        "android_client_info": {
+          "package_name": "com.gluonsoftwaredev.loginsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1054061919729-bf02t68jqpktu3bj4hi7jsca2av8ieln.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPKFOdFtfsruZu-l0YWzcK1H6NLCm8J9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1054061919729-bf02t68jqpktu3bj4hi7jsca2av8ieln.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
