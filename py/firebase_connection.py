@@ -58,10 +58,10 @@ def signup():
     return
 
 #Main
+if __main__=="__main__":
+    ans=input("Are you a new user?[y/n]")
 
-ans=input("Are you a new user?[y/n]")
-
-if ans == 'n':
-    login()
-elif ans == 'y':
-    signup()
+    if ans == 'n':
+        login()
+    elif ans == 'y':
+        signup()

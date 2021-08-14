@@ -1,24 +1,158 @@
+# <MainScreen>:
+#     id:MainScreen
+#     name:"MainScreen"
+#     MDNavigationLayout:
+
+#         ScreenManager:
+
+#             Screen:
+
+#                 BoxLayout:
+#                     orientation: 'vertical'
+
+#                     MDToolbar:
+#                         title: "Navigation Drawer"
+#                         elevation: 10
+#                         left_action_items: [['menu', lambda x: nav_drawer.set_state("open")]]
+
+#                     Widget:
+
+
+#         MDNavigationDrawer:
+#             id: nav_drawer
+
+#             ContentNavigationDrawer:    
 <MainScreen>:
-    id:MainScreen
-    name:"MainScreen"
-    MDNavigationLayout:
+    Navigation:
 
-        ScreenManager:
+<Navigation>:
+    ScreenManager:
+        id:screenmanager
+        screenmanager:screenmanager
+        Screen:
+            id:screen0
+            name:"screen0"
+            BoxLayout:
+                orientation: 'vertical'
 
-            Screen:
+                MDToolbar:
+                    id:toolbarku
+                    title: "Navigation Drawer"
+                    elevation: 10
+                    left_action_items: [['menu', lambda x: nav_drawer.set_state()]]
+                    right_action_items: [["dots-vertical", lambda x: root.popup()]]
 
-                BoxLayout:
-                    orientation: 'vertical'
+                Widget:
+                MDRectangleFlatButton:
+                    text:"Prees here or"
+                    # on_release: self.parent.parent.parent.parent.parent.parent.hello()
+                    # on_release: nav_drawer.set_state()
+                    on_release:root.ids.screenmanager.current="screen1"
+                    # on_release:root.gotoscreen2()
 
-                    MDToolbar:
-                        title: "Navigation Drawer"
-                        elevation: 10
-                        left_action_items: [['menu', lambda x: nav_drawer.set_state("open")]]
+        Screen1:
+            id:screen1
+            name:"screen1"
 
-                    Widget:
+        Screen2:
+        Screen3:
+
+    MDNavigationDrawer:
+        id: nav_drawer
+        ContentNavigationDrawer:
 
 
-        MDNavigationDrawer:
-            id: nav_drawer
 
-            ContentNavigationDrawer:    
+<ContentNavigationDrawer@BoxLayout>:
+    orientation: "vertical"
+    padding: "8dp"
+    spacing: "8dp"
+
+    AnchorLayout:
+        anchor_x: "left"
+        size_hint_y: None
+        height: avatar.height
+
+        Image:
+            id: avatar
+            size_hint: None, None
+            size: "56dp", "56dp"
+            source: "views/kivymd.png"
+
+    MDLabel:
+        text: "KivyMD library"
+        font_style: "Button"
+        size_hint_y: None
+        height: self.texture_size[1]
+
+    MDLabel:
+        text: "kivydevelopment@gmail.com"
+        font_style: "Caption"
+        size_hint_y: None
+        height: self.texture_size[1]
+
+    MDRectangleFlatButton:
+        text:"Logout"
+        on_release: self.parent.parent.parent.back()
+
+    List:
+
+        # DrawerList:
+        #     id: md_list
+
+
+<List@ScrollView>:
+    ScrollView:
+        MDList:
+            OneLineAvatarIconListItem:
+                on_release: print("Click!")
+                text:"Beranda"
+                IconLeftWidget:
+                    icon: "home"
+
+            OneLineAvatarIconListItem:
+                on_release: print("Click 2!")
+                text:"Penjualan"
+                IconLeftWidget:
+                    icon: "account"
+
+
+<Screen1@Screen>:
+    name:"screen1"
+    Tab1:
+    # MDRectangleFlatButton:
+    #     text:"this is screen 1"
+    #     on_release: app.root.ids.scr_mngr.current = 'screen0'
+    #     on_press:
+<Screen2@Screen>:
+    name:"screen2"
+    MDRectangleFlatButton:
+        text:"this is screen 2"
+        on_release: app.root.ids.scr_mngr.current = 'screen2'
+
+<Screen3@Screen>:
+    name:"screen3"
+    MDRectangleFlatButton:
+        text:"this is screen 3"
+        on_release: app.root.ids.scr_mngr.current = 'screen0'
+
+# <MDToolbarKu>:
+#     title: "Navigation Drawer"
+#     elevation: 10
+#     # left_action_items: [['menu', lambda x: self.parent.parent.parent.parent.ids.nav_drawer.toggle_nav_drawer()]]
+#     # left_action_items: [['menu', lambda x: self.nav.ids.nav_drawer.toggle_nav_drawer()]]
+
+#     # left_action_items: [['menu', lambda x: root.nav_drawer.toggle_nav_drawer()]]
+
+#     right_action_items: [["dots-vertical", lambda x: root.popup()]]
+<Tab1@MDTabs>:
+    Tab:
+        text:"tabs1"
+        MDLabel:
+            text: "Content"
+            pos_hint: {"center_x": .5, "center_y": .5}
+    Tab:
+        text:"tabs2"        
+        MDLabel:
+            text: "Content2"
+            pos_hint: {"center_x": .5, "center_y": .5}

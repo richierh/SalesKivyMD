@@ -1,16 +1,23 @@
 <Registration>:
+    kembali_kerumah:kembali_kerumah
+    lp_properties:[username,password,email]
     BoxLayout:
+        size:self.size
+        pos : self.pos
         orientation:"vertical"  
+        pos_hint:{'top':1}
         spacing : 10
-        BoxLayout:
-            orientation:"horizontal"
-            MDIconButton:
-                icon:"arrow-left-bold-outline"
-                # icon:"account-arrow-left"
-                on_release : print("goback")
+        size_hint_y:None
+        MDIconButton:
+            id:kembali_kerumah
+            icon:"arrow-left-bold-outline"
+            # icon:"account-arrow-left"python -m site
+
+            on_release : root.back("dd")
         BoxLayout:
             orientation: "horizontal"
             spacing : 30
+            pos_hint: {"top": 1}
             BoxLayout:
                 orientation: "horizontal"
             MDIconButton:
@@ -25,11 +32,54 @@
                 on_release : print("testing")
             BoxLayout:
                 orientation: "horizontal"
-        MDLabel :
-            text:"Or"
-            halign:"center"
-            pos_hint: {"center_x": .5, "center_y": .5}
+    BoxLayout:
+        orientation:'vertical'
+        spacing : 10
+        size_hint_y:None
+        size:self.size
+        pos_hint:{'center_y':.7}
 
+        MDLabel :
+            text:"atau"
+            halign:"center"
+            # pos_hint: {"center_x": .5, "center_y": .5}
+            size_hint_y:None
+    BoxLayout:
+        orientation:'vertical'
+        spacing : 10
+        size_hint_y:None
+        size:self.size
+        pos_hint:{'center_y':.2}        
+
+        MDTextFieldRound:
+            id : email
+            icon_left: "email"
+            pos_hint: {"center_x": .5, "center_y": .5}
+            size_hint:(.5,None)
+            hint_text: "email"
+        MDTextFieldRound:
+            id :password
+            icon_left:"onepassword"
+            # icon_left: "form-textbox-password"
+        # theme_text_color: "Dark"
+        # text_color: 0, 0, 1, 1
+            hint_text: "password"
+            password :True
+            pos_hint: {"center_x": .5, "center_y": .5}
+            size_hint:(.5,None)
+        MDTextFieldRound:
+            id:username
+            icon_left: "email"
+            pos_hint: {"center_x": .5, "center_y": .5}
+            size_hint:(.5,None)
+            hint_text: "email"
+        MDTextFieldRound:
+            icon_left:"onepassword"
+            # icon_left: "form-textbox-password"
+            hint_text: "password"
+            password :True
+            pos_hint: {"center_x": .5, "center_y": .5}
+            size_hint:(.5,None)
         MDTextFieldRound:
             icon_left: "email"
             pos_hint: {"center_x": .5, "center_y": .5}
@@ -42,10 +92,22 @@
             password :True
             pos_hint: {"center_x": .5, "center_y": .5}
             size_hint:(.5,None)
-        BoxLayout:
-            orientation:"vertical"
+        # BoxLayout:
+        #     orientation: "horizontal"
+        #     spacing : 30
+        #     pos_hint: {"top": 1}
+        MDFlatButton:
+            id:action
+            text: "Accept"
+            halign:'center'
+            md_bg_color:0, 1, 1, 1
+            size : self.size
+            pos_hint:{"center_x":.5,'center_y':.5}
+            on_release:root.action(self)
+            # theme_text_color: "Dark"
+            # text_color: 0, 0, 1, 1
 
-        BoxLayout:
-            orientation:"vertical"
-        BoxLayout:
-            orientation:"vertical"
+    # BoxLayout:
+    #     orientation:"vertical"
+    # BoxLayout:
+    #     orientation:"vertical"

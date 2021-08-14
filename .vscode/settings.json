@@ -1,5 +1,17 @@
 {
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
-    "python.linting.enabled": false
+    "python.linting.enabled": false,
+    "git.ignoreLimitWarning": true,
+    "python.pythonPath": "/home/cireng/.virtualenvs/kivyP/bin/python",
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./controllers",
+        "-p",
+        "test_*.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.unittestEnabled": true
 }

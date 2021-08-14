@@ -7,7 +7,15 @@ from py.main_screen import MainScreen
 from py.registration import Registration
 from kivy.lang import Builder
 from kivy.properties import StringProperty
+from kivyauth.google_auth import initialize_google, login_google, logout_google
+from android.permissions import request_permissions, Permission 
 
+request_permissions([Permission.READ_EXTERNAL_STORAGE, Permission.WRITE_EXTERNAL_STORAGE,\
+    Permission.INTERNET])
+
+GOOGLE_CLIENT_ID = ('1054061919729-76nicpfqkstir6gjp0ec9g6geondib4h.apps.googleusercontent.com')
+GOOGLE_CLIENT_SECRET = ('t3fIj8XT8WQuWwKr5_h6MWlU')
+# from kivy_deps import sdl2, glew
 # from kaki.app import App
 # from kivy.factory import Factory
 
@@ -58,11 +66,25 @@ from kivy.properties import StringProperty
 # RAISE_ERROR = True
 
 class MyApp(MDApp):
-    kv_directory = "kv"
 
     def build(self):
+        kv_directory = "kv"
+
+        initialize_google(
+            GOOGLE_CLIENT_ID,
+            GOOGLE_CLIENT_SECRET,
+        )
+        # initialize_google(
+        #     self.after_login==None,
+        #     self.error_listener,
+        #     GOOGLE_CLIENT_ID,
+        #     GOOGLE_CLIENT_SECRET,
+        # )
+  
+
         self.title = "Login Screen"
         Builder.load_file("kv/manager_screen.kv")
+        Builder.load_file("kv/popups.kv")
 
         return ManagerScreen()
 

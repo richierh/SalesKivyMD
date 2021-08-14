@@ -1,34 +1,94 @@
-<LoginScreen>
+<LoginScreen> :
+    inputuser:inputuser
+    passwuser:passwuser
+
+    canvas.before:
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            source: 'py/logo/background.jpg'
+
+
     MDCard:
+        # canvas.before:
+        #     Rectangle:
+        #         size: self.size
+        #         pos: self.pos
+        #         source: 'py/logo/background.jpg'
         orientation: "vertical"
+
         size_hint: None, None
         size: root.width-root.width/10,root.height-root.height/10
         pos_hint: {"center_x": .5, "center_y": .5}
-        MDIcon:
-            icon: root.main_icon		
-            font_size : 48
-            halign:"center"
-            pos_hint: {"center_x": .5, "center_y": .5}
-        
+        BoxLayout:
+            orientation:"vertical"
+            canvas:
+                Color:
+                    rgb: (1, 1, 1)
+                Rectangle:
+                    # texture: self.texture
+                    size: self.width , self.height+20
+                    pos: self.x, self.y-40
+                    source: 'py/logo/python.png'
+
+
+        # Image:
+            # icon: root.main_icon
+            # source: 'py/logo/python.png'
+            # pos: self.parent.pos
+            # size : self.size
+            # height : dp(100)
+            # width : dp(42) 
+            # user_font_size : "64sp"
+            # halign:"center"
+            # size_hint_y:None
+            # size_hint_x:None
+            # pos_hint: {"center_x":.5, "center_y": 0.5}
+
         MDLabel:
             pos_hint: {"center_x": .5, "center_y": .5}
             halign:"center"
             text:"Login Form"
         BoxLayout:
-            orientation:"horizontal"
-            spacing :"10dp"
-            pos : self.pos
-            size :self.size
-            pos_hint: {"center_x": .5, "center_y": .5}
+            orientation:"vertical"
+            spacing : 10
+            MDTextFieldRound:
+                id : inputuser
+                size_hint: .5,None
+                pos_hint: {"center_x": .5, "center_y": .5}
+                icon_left: "login"
+                hint_text: "login"
+            MDTextFieldRound:
+                id : passwuser
+                size_hint: .5,None
+                pos_hint: {"center_x": .5, "center_y": .5}
+                icon_left: "shield-key"
+                password : True
+                hint_text: "password"
+        BoxLayout:
+            orientation:"vertical"
+            size_hint_y:1
+            MDLabel:
+                # pos_hint: {"center_x": .5, "center_y": .5}
+                halign:"center"
+                text:"Jika anda belum memiliki username / password silahkan untuk daftar terlebih dahulu"
+                font_size: dp(9)
+                # pos_hint: {"center_x": .5, "center_y": 1}
+                pos : 20,20
+
             BoxLayout:
                 orientation:"horizontal"
-            MDRaisedButton:
-                text:"Klik"
+                spacing :"10dp"
                 pos_hint: {"center_x": .5, "center_y": .5}
-                on_release:root.login("abcd")
-            MDRaisedButton:
-                text:"Klik 2"
-                pos_hint: {"center_x": .5, "center_y": .5}
-                on_release:root.registration("abcd")
-            BoxLayout:
-                orientation:"horizontal"
+                BoxLayout:
+                    orientation:"horizontal"
+                MDRaisedButton:
+                    text:"Login"
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                    on_release:root.login("abcd")
+                MDRaisedButton:
+                    text:"Daftar"
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                    on_release:root.registration("abcd")
+                BoxLayout:
+                    orientation:"horizontal"

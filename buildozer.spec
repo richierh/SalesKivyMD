@@ -7,7 +7,7 @@ title = LoginKivy
 package.name = loginkivy
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.test
+package.domain = org.main
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -36,13 +36,14 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-#requirements = python3,kivy==master,https://github.com/kivymd/KivyMD/archive/master.zip,pygments,sdl2_ttf==2.0.15,Pillow
+requirements = python3==3.8.1,hostpython3==3.8.1,kivy,https://github.com/kivymd/KivyMD/archive/master.zip,pygments,sdl2_ttf==2.0.15,Pillow,kivyauth,pyjnius,certifi
 #requirements = python3==3.8.1,hostpython3==3.8.1,kivy,kivymd,pygments,sdl2_ttf==2.0.15,Pillow
-requirements = python3==3.9.1,hostpython3==3.9.1,kivy,kivymd,pygments,sdl2_ttf==2.0.15,Pillow
+#requirements = python3==3.9.1,hostpython3==3.9.1,kivy==master,https://github.com/kivymd/KivyMD/archive/master.zip,pygments,sdl2_ttf==2.0.15,Pillow
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
 # requirements.source.kivy = ../../kivy
+requirements.source.kivyauth=/home/cireng/.virtualenvs/kivyP/lib/python3.9/site-packages/kivyauth
 
 # (list) Garden requirements
 #garden_requirements =
@@ -87,10 +88,10 @@ fullscreen = 0
 #android.presplash_color = #FFFFFF
 
 # (list) Permissions
-sandroid.permissions = INTERNET
+android.permissions = INTERNET , WRITE_EXTERNAL_STORAGE , READ_EXTERNAL_STORAGE,ACCESS_NETWORK_STATE
 
 # (int) Target Android API, should be as high as possible.
-android.api = 28
+android.api = 29
 
 # (int) Minimum API your APK will support.
 android.minapi = 21
@@ -159,6 +160,15 @@ android.accept_sdk_license = True
 # (list) Gradle dependencies to add (currently works only with sdl2_gradle
 # bootstrap)
 #android.gradle_dependencies =
+#android.gradle_dependencies =   com.facebook.android:facebook-login:8.1.0,
+#                                com.google.android.gms:play-services-auth:18.0.0,
+#                                com.google.firebase:firebase-auth:19.3.1,
+#                                com.newrelic.agent.android:android-agent:5.23.0
+
+
+android.gradle_dependencies =   com.google.android.gms:play-services-auth:18.0.0,
+                                com.google.firebase:firebase-auth:19.3.1,
+                                com.newrelic.agent.android:android-agent:5.23.0
 
 # (list) add java compile options
 # this can for example be necessary when importing certain java libraries using the 'android.gradle_dependencies' option
@@ -169,6 +179,8 @@ android.accept_sdk_license = True
 # please enclose in double quotes 
 # e.g. android.gradle_repositories = "maven { url 'https://kotlin.bintray.com/ktor' }"
 #android.add_gradle_repositories =
+android.add_gradle_repositories = "mavenCentral()"
+
 
 # (list) packaging options to add 
 # see https://google.github.io/android-gradle-dsl/current/com.android.build.gradle.internal.dsl.PackagingOptions.html
@@ -221,8 +233,9 @@ android.logcat_filters = *:S python:D
 #android.copy_libs = 1
 
 # (str) The Android arch to build for, choices: armeabi-v7a, arm64-v8a, x86, x86_64
-android.arch = armeabi-v7a
+#android.arch = armeabi-v7a
 #android.arch = x86
+android.arch = arm64-v8a
 # (int) overrides automatic versionCode computation (used in build.gradle)
 # this is not the same as app version and should only be edited if you know what you're doing
 # android.numeric_version = 1
