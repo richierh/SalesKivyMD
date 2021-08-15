@@ -17,10 +17,8 @@ Create new environment using virtualenv / virtualenvwrapper , Then install all d
 # How to create apk for android 
 create android apk with buildozer with the buildozer.spec configuration in this file.
 
-# 
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/buttons/smart?flowloggingId=accb8e4a5871c)
-
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JMU6HNGP6Y46E)
+# Donation
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=URPUYXDHBCYT8)
 
 Thank for your coming
 
