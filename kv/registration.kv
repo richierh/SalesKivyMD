@@ -1,111 +1,158 @@
 <Registration>:
     kembali_kerumah:kembali_kerumah
     lp_properties:[username,password,email]
-    BoxLayout:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source:'py/logo/bgregist.jpg'
+
+
+    MDBoxLayout:
+        pos_hint: {"center_x": .5, "center_y": .5}
         size:self.size
         pos : self.pos
         orientation:"vertical"  
-        pos_hint:{'top':1}
-        spacing : 10
-        size_hint_y:None
-        MDIconButton:
-            id:kembali_kerumah
-            icon:"arrow-left-bold-outline"
-            # icon:"account-arrow-left"python -m site
-
-            on_release : root.back("dd")
-        BoxLayout:
-            orientation: "horizontal"
-            spacing : 30
-            pos_hint: {"top": 1}
-            BoxLayout:
+        MDBoxLayout:
+            orientation:"vertical"
+            size_hint_y:.1
+            MDIconButton:
+                id:kembali_kerumah
+                icon:"arrow-left-bold-outline"
+                on_release : root.back("berhasil balik")
+        MDBoxLayout:
+            size_hint_y :.1
+            orientation: "horizontal"            
+            spacing : 50
+            MDBoxLayout:
                 orientation: "horizontal"
             MDIconButton:
                 icon: "google-plus.png"
-                # user_font_size :"48sp"
+                user_font_size :"24sp"
                 pos_hint: {"center_x": .5, "center_y": .5}
                 on_release : print("testing")
             MDIconButton:
                 icon: "facebook.png"
-                # user_font_size :"48sp"
+                user_font_size :"24sp"
                 pos_hint: {"center_x": .5, "center_y": .5}
                 on_release : print("testing")
-            BoxLayout:
+            MDBoxLayout:
                 orientation: "horizontal"
-    BoxLayout:
-        orientation:'vertical'
-        spacing : 10
-        size_hint_y:None
-        size:self.size
-        pos_hint:{'center_y':.7}
+        MDBoxLayout:
+            orientation:"vertical"  
+            size_hint_y:.1
+    
+            MDLabel :
+                text:"atau"
+                halign:"center"
+                pos_hint: {"center_x": .5, "center_y": .5}
+                # pos_y :10s
+                size_hint_y:.3
+                valign:'bottom'
+        MDBoxLayout:
+            orientation:'vertical'
+            spacing : 10
+            # # size:self.size
+            # pos_hint:{'center_y':.3}        
+            pos_hint: {"center_x": .5, "center_y": .5}
+            size_hint_y:.55
 
-        MDLabel :
-            text:"atau"
-            halign:"center"
-            # pos_hint: {"center_x": .5, "center_y": .5}
-            size_hint_y:None
-    BoxLayout:
-        orientation:'vertical'
-        spacing : 10
-        size_hint_y:None
-        size:self.size
-        pos_hint:{'center_y':.2}        
+            MDTextField:
+                id : namalengkap
+                pos_hint: {"center_x": .5, "center_y": .5}
+                hint_text: "Nama Lengkap"
+                color_mode: 'custom'
+                mode: "fill"
+                fill_color:0,0,0,.1
+                line_color_focus: 1, 1, 1, 1
+                size_hint_y:.2
+                size_hint_x:.8
 
-        MDTextFieldRound:
-            id : email
-            icon_left: "email"
-            pos_hint: {"center_x": .5, "center_y": .5}
-            size_hint:(.5,None)
-            hint_text: "email"
-        MDTextFieldRound:
-            id :password
-            icon_left:"onepassword"
-            # icon_left: "form-textbox-password"
-        # theme_text_color: "Dark"
-        # text_color: 0, 0, 1, 1
-            hint_text: "password"
-            password :True
-            pos_hint: {"center_x": .5, "center_y": .5}
-            size_hint:(.5,None)
-        MDTextFieldRound:
-            id:username
-            icon_left: "email"
-            pos_hint: {"center_x": .5, "center_y": .5}
-            size_hint:(.5,None)
-            hint_text: "email"
-        MDTextFieldRound:
-            icon_left:"onepassword"
-            # icon_left: "form-textbox-password"
-            hint_text: "password"
-            password :True
-            pos_hint: {"center_x": .5, "center_y": .5}
-            size_hint:(.5,None)
-        MDTextFieldRound:
-            icon_left: "email"
-            pos_hint: {"center_x": .5, "center_y": .5}
-            size_hint:(.5,None)
-            hint_text: "email"
-        MDTextFieldRound:
-            icon_left:"onepassword"
-            # icon_left: "form-textbox-password"
-            hint_text: "password"
-            password :True
-            pos_hint: {"center_x": .5, "center_y": .5}
-            size_hint:(.5,None)
-        # BoxLayout:
-        #     orientation: "horizontal"
-        #     spacing : 30
-        #     pos_hint: {"top": 1}
-        MDFlatButton:
-            id:action
-            text: "Accept"
-            halign:'center'
-            md_bg_color:0, 1, 1, 1
-            size : self.size
-            pos_hint:{"center_x":.5,'center_y':.5}
-            on_release:root.action(self)
+            MDTextField:
+                id :noktp
+                icon_left:"password"
+                # icon_left: "form-textbox-password"
             # theme_text_color: "Dark"
             # text_color: 0, 0, 1, 1
+                hint_text: "noktp"
+                password :True
+                pos_hint: {"center_x": .5, "center_y": .5}
+                color_mode: 'custom'
+                mode: "fill"
+                fill_color:0,0,0,.1
+                line_color_focus: 1, 1, 1, 1
+                size_hint_y:.2
+                size_hint_x:.8
+
+            MDTextField:
+                id:username
+                icon_left: "email"
+                pos_hint: {"center_x": .5, "center_y": .5}
+                hint_text: "username"
+                required:True
+                color_mode: 'custom'
+                mode: "fill"
+                fill_color:0,0,0,.1
+                line_color_focus: 1, 1, 1, 1
+                size_hint_y:.2
+                size_hint_x:.8
+
+            MDTextField:
+                id:password
+                icon_left:"onepassword"
+                # icon_left: "form-textbox-password"
+                hint_text: "password"
+                password :True
+                color_mode: 'custom'
+                mode: "fill"
+                fill_color:0,0,0,.1
+                line_color_focus: 1, 1, 1, 1
+                pos_hint: {"center_x": .5, "center_y": .5}
+                size_hint_y:.2
+                size_hint_x:.8
+
+            MDTextField:
+                id:email
+                icon_left: "email"
+                pos_hint: {"center_x": .5, "center_y": .5}
+                color_mode: 'custom'
+                mode: "fill"
+                fill_color:0,0,0,.1
+                line_color_focus: 1, 1, 1, 1
+                size_hint:(.5,None)
+                hint_text: "no HP"
+                size_hint_x:.8
+
+            MDTextField:
+                icon_left:"onepassword"
+                # icon_left: "form-textbox-password"
+                hint_text: "email"
+                password :True
+                color_mode: 'custom'
+                mode: "fill"
+                fill_color:0,0,0,.1
+                line_color_focus: 1, 1, 1, 1
+                pos_hint: {"center_x": .5, "center_y": .5}
+                size_hint_y:.2
+                size_hint_x:.8
+
+            # BoxLayout:
+            #     orientation: "horizontal"
+            #     spacing : 30
+            #     pos_hint: {"top": 1}
+
+            MDFlatButton:
+                size_hint_y:.15
+                size_hint_x:.25
+                height:200
+
+                md_bg_color:1, 1, 1, 1
+                id:action
+                text: "Accept"
+                pos_hint:{"center_x":.5,'center_y':.5}
+                on_release:root.action(self)
+                # theme_text_color: "Dark"
+                # text_color: 0, 0, 1, 1
 
     # BoxLayout:
     #     orientation:"vertical"
