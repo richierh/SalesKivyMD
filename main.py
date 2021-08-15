@@ -8,9 +8,12 @@ from py.registration import Registration
 from kivy.lang import Builder
 from kivy.properties import StringProperty
 from kivyauth.google_auth import initialize_google, login_google, logout_google
-from android.permissions import request_permissions, Permission 
+from kivy.utils import platform
 
-request_permissions([Permission.READ_EXTERNAL_STORAGE, Permission.WRITE_EXTERNAL_STORAGE,\
+if platform == "android":
+    from android.permissions import request_permissions, Permission 
+
+    request_permissions([Permission.READ_EXTERNAL_STORAGE, Permission.WRITE_EXTERNAL_STORAGE,\
     Permission.INTERNET])
 
 GOOGLE_CLIENT_ID = ('1054061919729-76nicpfqkstir6gjp0ec9g6geondib4h.apps.googleusercontent.com')
