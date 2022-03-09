@@ -18,6 +18,9 @@ class Registration(MDScreen):
         print ('Go back')
         self.parent.manager_screen.current = "login_screen"
     
+    def text_required_on_focus(self):
+        self.ids.first_name.required = True
+        pass
     def action(self,event):
         # import pdb
         # pdb.set_trace()

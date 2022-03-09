@@ -49,13 +49,28 @@
                     # on_release: nav_drawer.set_state()
                     on_release:root.ids.screenmanager.current="screen1"
                     # on_release:root.gotoscreen2()
+                MDRectangleFlatButton:
+                    text:"ke Screen4"
+                    # on_release: self.parent.parent.parent.parent.parent.parent.hello()
+                    # on_release: nav_drawer.set_state()
+                    on_release:root.ids.screenmanager.current="screen4"
+                    # on_release:root.gotoscreen2()
 
         Screen1:
             id:screen1
             name:"screen1"
 
         Screen2:
+            
         Screen3:
+
+        # Screen4:
+            # id:screen4
+            # name:"screen4"
+            # MDBoxLayout:
+            #     orientation:"vertical"
+            #     MDLabel:
+            #         text:"hello"
 
     MDNavigationDrawer:
         id: nav_drawer

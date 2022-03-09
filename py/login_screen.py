@@ -4,14 +4,19 @@ from kivy.properties import StringProperty,ObjectProperty
 
 class LoginScreen(Screen):
 
-    main_icon = StringProperty()
+    main_icon = StringProperty('mainjob')
     inputuser = ObjectProperty(None)
     passwuser = ObjectProperty(None)
+
+    # main_icon = "account-cog"
 
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.main_icon = 'account-cog'
+        # self.main_icon = 'account-cog'
+        print ("helo again")
+        print (self.main_icon)
+
         pass
 
     def login(self,event):
@@ -46,7 +51,7 @@ class Login() :
             self.firstphonenumber = self.separatenumber[0]+self.separatenumber[1]
             print (self.firstphonenumber)
             if self.firstphonenumber == str(62) or self.firstphonenumber == str(+6):
-                print(True) 
+                print(True)
             else :
                 print(False)
                 # Beri peringatan pada input box username / phone number bahwa nilainya tidak cocok
@@ -61,8 +66,21 @@ class Login() :
     def login_check(self):
 
         # Di bawah ini kode untuk menghubungkan input data ke database user yang ada di server
+        from py.db_connection_type import connect_run
+        # self.tipe_database = 'sqlite'
+        # self.nama_database = "hahaha"
+        # self.host = None
+        # self.user = None
+        # self.password = None
+        # self.database = None
+        # dua argument , yang pertama nama _ database dan yang kedua adalah tipe database (sqlite, mariadb, dsb)
+        # connect_run(self.nama_database,self.tipe_database,self.host,self.user,self.password)
+        # connect_run(self.nama_database,self.tipe_database,None,None,None,None)
         self.user = "admin"
         self.passw = "admin"
+        
+
+ 
         #
         
         # Cocokkan antara username yang diinput oleh user dengan database yang ada di server

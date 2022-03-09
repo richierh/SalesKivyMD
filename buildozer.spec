@@ -4,7 +4,7 @@
 title = LoginKivy
 
 # (str) Package name
-package.name = loginkivy
+package.name = KivyApps
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.main
@@ -36,7 +36,8 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3==3.8.1,hostpython3==3.8.1,kivy,https://github.com/kivymd/KivyMD/archive/master.zip,pygments,sdl2_ttf==2.0.15,Pillow,kivyauth,pyjnius,certifi
+#requirements = python3==3.8.1,hostpython3==3.8.1,kivy,https://github.com/kivymd/KivyMD/archive/master.zip,pygments,sdl2_ttf==2.0.15,Pillow,kivyauth,pyjnius,certifi
+requirements = python3==3.8.9,hostpython3==3.8.9,kivy,kivymd,kivyauth,pillow,sqlite3,https://github.com/kivymd-extensions/akivymd/archive/main.zip,pymysql
 #requirements = python3==3.8.1,hostpython3==3.8.1,kivy,kivymd,pygments,sdl2_ttf==2.0.15,Pillow
 #requirements = python3==3.9.1,hostpython3==3.9.1,kivy==master,https://github.com/kivymd/KivyMD/archive/master.zip,pygments,sdl2_ttf==2.0.15,Pillow
 
@@ -91,7 +92,7 @@ fullscreen = 0
 android.permissions = INTERNET , WRITE_EXTERNAL_STORAGE , READ_EXTERNAL_STORAGE,ACCESS_NETWORK_STATE
 
 # (int) Target Android API, should be as high as possible.
-android.api = 29
+#android.api = 29
 
 # (int) Minimum API your APK will support.
 android.minapi = 21

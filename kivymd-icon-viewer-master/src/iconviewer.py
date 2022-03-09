@@ -48,7 +48,7 @@ Builder.load_string('''
     padding: 10
     IVTabs:
         id: tabs
-        size_hint_y: None
+        # size_hint_y: None
         height: dp(40)
         spacing: 20
         padding: 20, 0
@@ -103,10 +103,10 @@ Builder.load_string('''
                 IVGridRV:
                     id: rv_all
                 BoxLayout:
-                    size_hint_y: None
+                    # size_hint_y: None
                     height: max(sp(15), 30)
                     IVIcon:
-                        size_hint_x: None
+                        # size_hint_x: None
                         width: max(sp(15), 30)
                         font_size: max(sp(15), 30)
                         color: 1, 1, 1, 1
@@ -177,7 +177,7 @@ Builder.load_string('''
 <IVBoxViewClass@IVBaseViewClass+BoxLayout>:
     spacing: 20
     IVIconButton:
-        size_hint_x: None
+        # size_hint_x: None
         width: ICON_SIZE
         font_size: ICON_SIZE
         color: colors[root.group]

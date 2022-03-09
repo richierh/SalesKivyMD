@@ -123,7 +123,7 @@ ScreenManager:
                 release_action: app.twitter_login
             
             Widget:
-                size_hint_y: None
+                # size_hint_y: None
                 height: dp(100)
 
 <LoginButton@AnchorLayout>:
@@ -171,7 +171,7 @@ ScreenManager:
             id: user_photo
 
         BoxLayout:
-            size_hint_y:None
+            # size_hint_y:None
             height: dp(20)
             padding: dp(5)
             
@@ -193,12 +193,12 @@ ScreenManager:
 
 <Content>:
     orientation: "vertical"
-    size_hint_y: None
+    _y: None
     height: "90dp"
 
     AnchorLayout:
         MDSpinner:
-            size_hint: None, None
+            # size_hint: None, None
             size: dp(30), dp(30)
             pos_hint: {'center_x': .5, 'center_y': .5}
     
@@ -263,8 +263,8 @@ class LoginDemo(MDApp):
             btn.bind(on_release=lambda *args: (stop_login(), self.dialog.dismiss()))
             self.dialog = MDDialog(
                 title="",
-                size_hint_x=None,
-                size_hint_y=None,
+                # size_hint_x=None,
+                # size_hint_y=None,
                 width="250dp",
                 type="custom",
                 auto_dismiss=False,

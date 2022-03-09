@@ -10,6 +10,12 @@ from kivy.properties import StringProperty
 from kivyauth.google_auth import initialize_google, login_google, logout_google
 from kivy.utils import platform
 
+
+
+def windows_size():
+    Window.size = (480, 600)
+
+
 if platform == "android":
     from android.permissions import request_permissions, Permission 
 
@@ -88,7 +94,9 @@ class MyApp(MDApp):
         self.title = "Login Screen"
         Builder.load_file("kv/manager_screen.kv")
         Builder.load_file("kv/popups.kv")
-
+        # the function to activate android size in pc
+        # you should non activate this when trying to build apk
+        # windows_size()
         return ManagerScreen()
 
 
